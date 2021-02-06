@@ -1,0 +1,17 @@
+<ion-card>
+  <ion-item>
+      <ion-icon name="{{icone}}" slot="start"></ion-icon>
+      <ion-label><b>{{titulo}}</b></ion-label>
+  </ion-item>
+
+  <ion-card-content>
+      <ion-row>
+          <ion-col size="2">
+              <ion-badge color="{{cor}}">{{num}}</ion-badge>  
+          </ion-col>
+          <ion-col>
+              <ion-text color="{{cor}}"><p class="ion-text-center">{{valor | currency: 'BRL':true}}</p></ion-text>          
+          </ion-col>
+      </ion-row>       
+  </ion-card-content>
+</ion-card>

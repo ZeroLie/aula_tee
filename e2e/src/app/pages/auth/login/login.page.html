@@ -1,0 +1,31 @@
+<ion-content class="ion-padding">
+
+    <topo-login title="Seja Bem-vindo! :)"></topo-login>
+
+    <div id="login-div">  
+        <form [formGroup]="loginForm" (submit)="login()">
+            <ion-item>
+                <ion-icon name="mail" slot="start"></ion-icon>
+                <ion-input formControlName="email" type="text" placeholder="E-mail" autofocus="true"></ion-input>
+            </ion-item><br>
+
+            <ion-item>
+                <ion-icon name="lock-closed" slot="start"></ion-icon>
+                <ion-input formControlName="password" type="password" placeholder="Senha"></ion-input>
+            </ion-item><br><br>
+            <ion-button [disabled]="loginForm.invalid" type="submit" expand="block" color="if" fill="clear"> Enviar </ion-button>
+        </form>
+    </div>
+
+</ion-content>
+
+<ion-footer>
+    <ion-row>
+        <ion-col>
+            <ion-button [routerLink]="['/auth/forgot']" fill="clear" expand="block" color="medium"> Esqueci minha senha </ion-button>
+        </ion-col>
+        <ion-col>
+            <ion-button [routerLink]="['/auth/register']" fill="clear" expand="block" color="medium"> Criar Usuario </ion-button>
+        </ion-col>
+    </ion-row>
+</ion-footer>

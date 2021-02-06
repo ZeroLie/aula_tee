@@ -1,0 +1,15 @@
+#logo-div   {
+    height: 56%;
+    display: flex;
+    align-items: center;        //Alinhamento vertical
+    justify-content: center;    //Linha horizontal
+
+    h3 {
+        text-align: center;
+    }
+
+    p {
+        text-align: center;
+        padding-top: 10px;
+    }
+}

@@ -1,0 +1,32 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title> Contas a {{tipo}} </ion-title>
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+    <ion-list>
+
+        <ion-item *ngFor="let conta of listaContas">
+            <ion-label>
+                <h2>{{conta.parceiro}}</h2>
+                <p>{{conta.descricao}}</p>
+                <h3>R$ {{conta.valor}}</h3>
+            </ion-label>
+            <ion-icon slot="end" name="create" color="primary" (click)="edita(conta)"></ion-icon>
+            <ion-icon slot="end" name="trash-bin-outline" color="danger" (click)="remove(conta)"></ion-icon>
+        </ion-item>
+
+    </ion-list>
+  
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+      <ion-fab-button [routerLink]="['/contas/cadastro']">
+        <ion-icon name="add"></ion-icon>
+      </ion-fab-button>
+  </ion-fab>
+
+</ion-content>

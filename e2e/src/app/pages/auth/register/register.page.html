@@ -1,0 +1,44 @@
+<ion-content class="ion-padding">
+
+    <topo-login title="Preencha os dados do Usuário"></topo-login>
+
+    <div id="register-div">
+        <form [formGroup]="loginForm" (submit)="createUser()">
+            <ion-item>
+                <ion-icon name="happy-outline" slot="start"></ion-icon>
+                <ion-input formControlName="nome" type="text" placeholder="Nome" autofocus="true"></ion-input>
+            </ion-item><br>
+        
+            <ion-item>
+                <ion-icon name="happy-outline" slot="start"></ion-icon>
+                <ion-input formControlName="snome" type="text" placeholder="Sobrenome"></ion-input>
+            </ion-item><br>
+
+        <ion-item>
+            <ion-icon name="mail" slot="start"></ion-icon>
+            <ion-input formControlName="email" type="email" placeholder="E-mail"></ion-input>
+        </ion-item><br>
+
+        <ion-item>
+            <ion-icon name="key-outline" slot="start"></ion-icon>
+            <ion-input formControlName="password" type="password" placeholder="Senha"></ion-input>
+        </ion-item><br>
+
+        <ion-item>
+            <ion-icon name="checkmark-outline" slot="start"></ion-icon>
+            <ion-input formControlName="confirm_pass" type="confirm_password" placeholder="Confirmar"></ion-input>
+        </ion-item><br><br>
+        <ion-button [disabled]="loginForm.invalid" type="submit" expand="block" color="if" fill="clear"> Enviar </ion-button>
+        </form><br><br>
+    </div>
+
+
+</ion-content>
+
+<ion-footer>
+    <ion-row>
+        <ion-col>
+            <ion-button [routerLink]="['/auth']" expand="block" fill="clear" color="blue"> Voltar </ion-button>
+        </ion-col>
+    </ion-row>
+</ion-footer>

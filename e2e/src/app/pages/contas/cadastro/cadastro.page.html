@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Nova Conta</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding"><br>
+
+  <div id="cadastro-div">
+
+  <form [formGroup]="contasForm" (submit)="registraConta()">
+      <ion-item>
+          <ion-icon name="person" slot="start"></ion-icon>
+          <ion-input formControlName="parceiro" placeholder="Parceiro Comercial" autofocus="true"></ion-input>
+      </ion-item><br>
+
+      <ion-item>
+          <ion-icon name="document" slot="start"></ion-icon>
+          <ion-input formControlName="descricao" placeholder="Descrição"></ion-input>
+      </ion-item><br>
+      
+      <ion-item>
+          <ion-icon name="wallet" slot="start"></ion-icon>
+          <ion-input type="number" formControlName="valor" placeholder="Valor"></ion-input>
+      </ion-item><br><br>
+
+      <ion-item>
+          <ion-label>Vencimento</ion-label>
+          <ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="DD MMMM YYYY" [(ngModel)]=""></ion-datetime>
+      </ion-item><br/>
+
+      <ion-radio-group formControlName="tipo">
+          <ion-item>
+            <ion-label> A pagar </ion-label>
+            <ion-radio slot="start" value="pagar"></ion-radio>
+          </ion-item>
+
+          <ion-item>
+            <ion-label> A Receber </ion-label>
+            <ion-radio slot="start" value="receber"></ion-radio>
+          </ion-item>
+      </ion-radio-group><br><br>
+
+      <ion-button [disabled]="contasForm.invalid" type="submit" expand="block" color="if" fill="clear"> Enviar </ion-button>
+  </form>
+  </div>
+
+</ion-content>
